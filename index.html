@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <p>Click the button to add a new row at the first position of the table and then add cells and content.</p>
+    <p>My Calendar.</p>
 
 <table id="myTable">
   <tr><td>Monday</td>
@@ -36,11 +36,11 @@
 </table>
 <br>
 
-<button onclick="fillCalendar(0,1,'mon')">Add To Monday</button>
-<button onclick="fillCalendar(1,1,'tues')">Add To Tuesday</button>
-<button onclick="fillCalendar(2,1,'wed')">Add To Wed</button>
-<button onclick="fillCalendar(3,1,'thurs')">Add To Thurs</button>
-<button onclick="fillCalendar(4,1,'fri')">Add To Thurs</button>
+<button onclick="fillCalendar(0,1,'mon','#54ff00')">Add To Monday</button>
+<button onclick="fillCalendar(1,1,'tues','#554499')">Add To Tuesday</button>
+<button onclick="fillCalendar(2,1,'wed','#ff33aa')">Add To Wed</button>
+<button onclick="fillCalendar(3,1,'thurs','#435fff')">Add To Thurs</button>
+<button onclick="fillCalendar(4,1,'fri','#342211')">Add To Thurs</button>
 
 <script>
   var globStr = 1;
@@ -50,6 +50,7 @@ function fillCalendar(weekday, hour, string, color) {
   row = document.getElementById("myTable").rows[weekdayCount[weekday]];
    var cell1 = row.cells[weekday];
   cell1.innerHTML = globStr;
+  cell1.style.color = color;
   globStr = weekdayCount[weekday];
    weekdayCount[weekday] = weekdayCount[weekday] +1;
 }
