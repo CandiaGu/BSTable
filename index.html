@@ -1,25 +1,59 @@
 <!DOCTYPE html>
 <html>
   <body>
-    table, th, td {
-    border: 1px solid black;
+    <p>Click the button to add a new row at the first position of the table and then add cells and content.</p>
+
+<table id="myTable">
+  <tr><td>Monday</td>
+    <td>Tuesday</td>
+    <td>Wednesday</td>
+    <td>Thursday</td>
+    <td>Friday</td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<br>
+
+<button onclick="fillCalendar(0,1,'mon')">Add To Monday</button>
+<button onclick="fillCalendar(1,1,'tues')">Add To Tuesday</button>
+<button onclick="fillCalendar(2,1,'wed')">Add To Wed</button>
+<button onclick="fillCalendar(3,1,'thurs')">Add To Thurs</button>
+<button onclick="fillCalendar(4,1,'fri')">Add To Thurs</button>
+
+<script>
+  var globStr = 1;
+  var weekdayCount = [1,1,1,1,6];
+function fillCalendar(weekday, hour, string, color) {
+  var table = document.getElementById("myTable");
+  row = document.getElementById("myTable").rows[weekdayCount[weekday]];
+   var cell1 = row.cells[weekday];
+  cell1.innerHTML = globStr;
+  globStr = weekdayCount[weekday];
+   weekdayCount[weekday] = weekdayCount[weekday] +1;
 }
-     <table style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-</table> 
+</script>
+ 
   </body>
 </html>
