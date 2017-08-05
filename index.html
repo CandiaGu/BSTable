@@ -37,19 +37,18 @@
 <br>
 
 <button onclick="fillCalendar(0,1,'mon','#54ff00')">Add To Monday</button>
-<button onclick="fillCalendar(1,1,'tues','#554499')">Add To Tuesday</button>
-<button onclick="fillCalendar(2,1,'wed','#ff33aa')">Add To Wed</button>
-<button onclick="fillCalendar(3,1,'thurs','#435fff')">Add To Thurs</button>
-<button onclick="fillCalendar(4,1,'fri','#342211')">Add To Thurs</button>
+<button onclick="fillCalendar(1,5,'tues','#554499')">Add To Tuesday</button>
+<button onclick="fillCalendar(2,2,'wed','#ff33aa')">Add To Wed</button>
+<button onclick="fillCalendar(3,7,'thurs','#435fff')">Add To Thurs</button>
+<button onclick="fillCalendar(4,10,'fri','#342211')">Add To Fri</button>
 
 <script>
-  var globStr = 1;
-  var weekdayCount = [1,1,1,1,6];
+ 
 function fillCalendar(weekday, hour, string, color) {
   var table = document.getElementById("myTable");
-  row = document.getElementById("myTable").rows[weekdayCount[weekday]];
+  row = document.getElementById("myTable").rows[hour];
    var cell1 = row.cells[weekday];
-  cell1.innerHTML = globStr;
+  cell1.innerHTML = string;
   cell1.style.color = color;
   globStr = weekdayCount[weekday];
    weekdayCount[weekday] = weekdayCount[weekday] +1;
