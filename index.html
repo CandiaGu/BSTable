@@ -1,25 +1,72 @@
 <!DOCTYPE html>
 <html>
+  <head>
+  <title>BSTable</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+  <script>
+      function submitelem() {
+        var input = document.getElementById("userInput").value;
+        //var patt = /w3schools/i
+        var weekdays = ["mon", "tues", "wed", "thurs", "fri"]
+        var wkday = "none"; var hour = "none"; var str = "none"; var color = "none";
+        var res = input.split(" ");
+        if(res.length == 4)
+          for (var i = 0; i < 4; i++)
+            switch(i){
+               case 0://weekday
+                  wkday = res[i];
+                  break;
+               case 1://hour
+                  hour = res[i];
+                  break;
+               case 2://string
+                  str = res[i];
+                  break;
+               case 3://color
+                  color = res[i];
+                  break;
+              }
+          
+        
+        /*for( i = 0; i < weekdays.length; i++){
+          num = input.search(weekdays[i])
+          if(num != -1){
+            wkday = weekdays[i];
+            break;
+          }
+        }*/
+        alert(wkday);
+        alert(hour);
+        alert(str);
+        alert(color);
+        alert(input);
+      }
+  </script>
+  </head>
   <body>
-    table, th, td {
-    border: 1px solid black;
-}
-     <table style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-</table> 
+      <table style="width:100%">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      </table> 
+      <form id = "my-form">
+        <input type="text" placeholder="weekday, hour, thing, (r,g,b)" id = "userInput">
+        <input type="submit" id="submit" value="submit" onclick="submitelem();" style="visibility: hidden;" />
+      </form>
+      
   </body>
 </html>
